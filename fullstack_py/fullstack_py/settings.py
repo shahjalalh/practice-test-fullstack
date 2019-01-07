@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'star_ratings',
+    'phonenumber_field',
 
     'isps',
 
@@ -79,6 +80,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.request',
             ],
         },
     },
