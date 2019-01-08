@@ -5,7 +5,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
 
-class Provider:
+class Provider(models.Model):
 
     def user_directory_path(self, instance, filename):
         # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>

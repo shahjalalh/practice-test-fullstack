@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
+app_name='ratings'
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^ratings/', include('star_ratings.urls', namespace='ratings', app_name='ratings')),
+    url(r'^ratings/', include('star_ratings.urls', namespace='ratings')),
 ]
 
 if settings.DEBUG:
