@@ -7,8 +7,10 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 class Provider(models.Model):
 
-    def user_directory_path(self, instance, filename):
+    def user_directory_path(self, instance):
         # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
+        import pdb;pdb.set_trace()
+        filename = instance
         return 'user_{0}/{1}'.format(instance.user.id, filename)
 
     name = models.CharField(max_length=200, null=False, blank=False, default=None)
@@ -18,7 +20,7 @@ class Provider(models.Model):
     description = models.TextField()
     contact_no = PhoneNumberField(blank=True)
     email = models.EmailField(max_length=254)
-    image = models.ImageField(upload_to=user_directory_path)
+    image = models.ImageField(upload_to=user_directory_path, null=True, blank=True)
     url = models.URLField(max_length=254)
 
     def __str__(self):
