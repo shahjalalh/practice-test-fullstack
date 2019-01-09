@@ -9,9 +9,10 @@ class Provider(models.Model):
 
     def user_directory_path(self, instance):
         # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
-        import pdb;pdb.set_trace()
+        # import pdb;pdb.set_trace()
         filename = instance
-        return 'user_{0}/{1}'.format(instance.user.id, filename)
+        # return 'user_{0}/{1}'.format(instance.user.id, filename)
+        return 'user_/{0}'.format(filename)
 
     name = models.CharField(max_length=200, null=False, blank=False, default=None)
     lowest_price = models.FloatField(null=True, blank=True, default=0.0)
